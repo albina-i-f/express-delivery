@@ -1,0 +1,59 @@
+@media (max-width: 990px) {
+	.wrap {
+		padding: 20px / 990px * 100%;
+	}
+
+	.map {
+		padding: 0;
+	}
+}
+
+@media (min-width: 530px) and (max-width: 767px) {
+	nav {
+		.logo {
+			img {
+				width: 68%;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.delivery-search-form {
+		.pad-left,
+		.pad-right {
+			padding: 0;
+		}
+
+		.reverse {
+			display: block;
+			height: 30px;
+			width: 40px;
+			margin: -10px auto 10px;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.wrap {
+		main {
+			margin-bottom: 115px;
+		}
+
+		footer {
+			height: 100px;
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.wrap {
+		main {
+			padding-bottom: 135px;
+		}
+
+		footer {
+			height: 120px;
+		}
+	}
+}

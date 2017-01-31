@@ -1,0 +1,544 @@
+@import 'variables';
+
+/* --------------------- Common settings ------------------- */
+
+html, 
+body {
+	height: 100%;
+}
+
+/* ---------- Typography ---------- */
+
+html {
+	font-size: 14px;
+}
+
+body {
+	background-color: #f2f2f2;
+	color: #333;
+	font: {
+		family: $font-stack;
+		size: 1rem;
+	}
+}
+
+h2 {
+	font-weight: normal;
+	line-height: 1;
+}
+
+a {
+	color: $primary-color;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: #7375d8;
+	}
+}
+
+.center-aligned {
+	text-align: center;
+}
+
+/* ---------- /typography ---------- */
+
+/* ---------- Form elements ---------- */
+
+button,
+input,
+select,
+textarea,
+.form-control,
+.btn {
+	border: 1px solid $primary-color;
+	border-radius: 3px;
+	box-shadow: none;
+	outline: none;
+}
+
+.form-control {
+	font-family: $font-stack;
+	font-size: 1rem;
+	height: 40px;
+	line-height: (40px / 14px);
+	margin-bottom: 20px;
+	padding: 0 12px;
+	text-overflow: ellipsis;
+}
+
+select::-ms-expand {
+	background-color: #fff;
+	border: 0;
+}
+
+.btn {
+	cursor: pointer;
+	display: inline-block;
+	font-family: RobotoBold, Arial, Verdana, sans-serif;
+	line-height: 2;
+	padding: 0 12px;
+	text-align: center;
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+	}
+}
+
+.btn-large {
+		@extend .btn;
+		font-size: 1.3rem;
+		line-height: (40px / 18px);
+		padding: 0 14px;
+	}
+
+*::-webkit-input-placeholder {
+	font-family: $font-stack;
+	font-size: 1rem;
+	opacity: 1;	
+}
+
+*:-moz-placeholder {
+	font-family: $font-stack;
+	font-size: 1rem;
+	opacity: 1;	
+}
+
+*::-moz-placeholder {
+	font-family: $font-stack;
+	font-size: 1rem;
+	opacity: 1;	
+}
+
+*:-ms-input-placeholder {
+	font-family: $font-stack;
+	font-size: 1rem;
+	opacity: 1;	
+}
+
+*::-ms-input-placeholder {
+	font-family: $font-stack;
+	font-size: 1rem;
+	opacity: 1;	
+}
+
+/* ---------- /form elements ---------- */
+
+/* ----------- Containers ---------- */
+
+.container-fluid,
+.row {
+	margin: 0;
+	padding: 0;
+}
+
+.container-fluid {
+	height: 100%;
+}
+
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+	padding: 0;
+}
+
+.wrap {
+	background-color: #fff;
+	border: {
+		left: 1px solid #ddd;
+		right: 1px solid #ddd;
+	}
+	margin: 0 auto;
+	min-height: 100%;
+	max-width: 990px;
+	min-width: 320px;
+	padding: 20px;
+	position: relative;
+	width: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+%unstyled {
+	list-style: none;
+}
+
+.table-container {
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+/* --------- /containers --------- */
+
+/* --------------------- Header ------------------- */
+/* ---------- Navigation ---------- */
+
+nav {
+	ul {
+		@extend %unstyled;
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		display: inline-block;
+		height: 100%;
+		vertical-align: top;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+		}
+	}
+
+	.logo {
+		height: 50px;
+		line-height: 50px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.menu-user {
+		margin-top: 10px;
+
+		li {
+			display: inline-block;
+			height: $nav-elem-hight;
+			margin-left: 10px;
+			position: relative;
+		}
+
+		a {
+			line-height: $nav-elem-hight;
+			width: 100%;
+		}
+	}
+
+	.messages {
+		.fa {
+			font-size: 1.75rem;
+			line-height: $nav-elem-hight;
+		}
+	}
+
+	.alerts:hover .badge[data-badge]:after {
+		background-color: #ffe700;
+	}
+
+	.badge[data-badge]:after {
+		background-color: $accent-color;
+		border-radius: 45%;
+		color: #fff;
+		content: attr(data-badge);
+		display: inline-block;
+		font-size: 1.2rem;
+		line-height: $nav-elem-hight - 6px;
+		width: $nav-elem-hight;
+		text-align: center;
+	}
+
+	.user-profile {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+
+		a {
+			padding: 0 10px;
+		}
+
+		.fa {
+			font-size: 1.2rem;
+		}
+
+		&.open {
+			a.dropdown-toggle {
+				background-color: #f2f2f2;
+			}
+		}
+	}
+
+	.user-name {
+		color: #333;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: #7375d8;
+		}
+	}
+
+	.dropdown-menu {
+		background-clip: padding-box;
+		background-color: #fff;
+		border: 1px solid rgba(0,0,0,.2);
+		border-radius: 3px;
+		box-shadow: 0 5px 10px rgba(0,0,0,.2);
+		position: absolute;
+		right: 0;
+		top: $nav-elem-hight;
+		min-width: 100%;
+		z-index: 10;
+
+		li {
+			display: block;
+			margin: 0
+		}
+
+		li:first-child {
+			a {
+				border-radius: 3px 3px 0 0;
+			}
+		}		
+
+		li:last-child {
+			a {
+				border-radius: 0 0 3px 3px;
+			}
+		}
+
+		a {
+			color: #333;
+			padding: 0 10px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color:  #7375d8;
+				color: #fff;
+			}
+		}
+	}
+
+	.menu-btn {
+		margin-top: 10px;
+		text-align: center;
+	}
+
+	.find {
+		@extend .btn;
+		border: 1px solid $accent-color;
+		color: $accent-color;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #ffe700;
+			border-color: #ffe700;
+			color: #fff;
+		}
+
+		&.active {
+			background-color: $accent-color;
+			color: #fff;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: #ffe700;
+				border-color: #ffe700;
+			}
+		}
+	}
+
+	.suggest {
+		@extend .btn;
+		border: 1px solid $primary-color;
+		color: $primary-color;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			background-color: #4e51d8;
+			border-color: #4e51d8;
+			color: #fff;
+		}
+	}
+
+	.btn-separator {
+		line-height: $nav-elem-hight;
+		padding: 0 5px;
+	}
+}
+
+/* ---------- /navigation ---------- */
+
+/* --------------------- Content ------------------- */
+
+main.content {
+	margin-bottom: 95px;
+	padding-top: 15px;
+
+	.placeholder {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+/* --------------------- DELIVERY SEARCH PARAMETERS PAGE ------------------- */
+
+.delivery-search-form,
+.map {
+	margin: 25px 0;
+}
+
+.delivery-search-form {
+	border: 2px solid $primary-color;
+	border-radius: 3px;
+	padding: 10px;
+
+	h2 {
+		margin: 10px 0 0;
+	}
+
+	hr {
+		border-color: $primary-color;
+		margin-top: 15px;
+	}
+
+	.pad-left {
+		padding-left: 20px;
+	}
+
+	.pad-right {
+		padding-right: 20px; 
+	}
+
+	.reverse {
+		background-color: #ddd;
+		height: 24px;
+		margin-left: -36px;
+		width: 30px;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #7375d8;
+			border-color: #7375d8;
+			color: #fff;
+		}
+	}
+
+	.form-control {
+		width: 100%;
+	}
+
+	.btn-search {
+		@extend .btn-large;
+		background-color: $accent-color;
+		border-color: $accent-color; 
+		color: #fff;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #ffe700;
+			border-color: #ffe700;
+			color: #fff;
+		}
+	}
+}
+
+.map {
+	padding-top: 38px;
+
+	img {
+		width: 100%
+	}
+}
+
+/* ---------- Orders table ---------- */
+
+.orders {
+	border: 1px solid $primary-color;
+	margin: 20px 0;
+	width: 100%;
+
+	th,
+	td {
+		border: 1px solid $primary-color;
+		line-height: 1.2;
+		padding: 10px 5px;
+	}
+
+	td {
+		text-align: center;
+	}
+}
+
+/* ---------- /orders table ---------- */
+
+/* --------------------- /DELIVERY SEARCH PARAMETERS PAGE ------------------- */
+
+/* --------------------- Footer ------------------- */
+
+.wrap footer {
+	background-color: #7375d8;
+	border-radius: 3px;
+	bottom: 20px;
+	height: 80px;
+	padding: 10px / 990px * 100%;
+	position: absolute;
+	width: (990px - 42px) / 990px * 100%;
+
+	p {
+		line-height: 1.5;
+		margin: 0;
+	}
+}
+
+@import 'media';
